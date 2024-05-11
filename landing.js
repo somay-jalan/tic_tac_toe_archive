@@ -4,7 +4,7 @@ async function typerwriter(speed){
     document.getElementById("typewriter").innerHTML=""
     console.log(element);
     for(let i=0;i<element.length;i++){
-        document.getElementById("typewriter").innerHTML=element.substring(0,i+1)+'<span aria-hidden="true"></span>'
+        document.getElementById("typewriter").innerHTML=element.substring(0,i+1)+'<cursor aria-hidden="true"></cursor>'
         var randSpeed=speed+(Math.random()-0.5)*speed
         // console.log(randSpeed)
         await sleep(randSpeed);
