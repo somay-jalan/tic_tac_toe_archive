@@ -16,20 +16,27 @@
             }
         </script> -->
 	</head>
-	<body onload="typerwriter(90)" onunload="" >
+	<body onload="startAnimation()" onunload="" >
         <div class='pattern' >
-            <script src="/landing.js"></script>
-            <div class="card" style="position:fixed;top: 2%; left: 27.5% ; width: 700px; height: 825px;" id="Try to win" >
+            <script src="/TryToWin.js"></script>
+            <h1 class="h1special" id="rules" style="top: 5%; left: 8%; font-size: 3.9vw; opacity: 0;">Rules</h1>
+            <h1 class="h1special" id="rulesText" style="top: 20%; left: 4%; font-size: 1.95vw; opacity: 0;text-align: left;">
+            There are no<br> special rules.<br> Just a normal<br> Tic Tac Toe,<br> BUT YOU WILL<br> ALWAYS LOOSE. </h1>
+            <div class="card" style="position:fixed;top: 2%; left: 27.5% ; width: 45.57vw; height: 94.2vh;" id="Try to win" >
                 <div class="content">
                     <div class="back">
                         <div class="back-content">
-                            <svg id="TicTacToe" width="600" height="600" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg id="TicTacToe"  style="margin-top:5%;margin-left: 3.255vw;"  width="39.06vw" height="39.06vw" viewBox="0 0 204 204" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <line x1="68.5" x2="68.5" y2="204" stroke="#FAEBD7"></line>
                                 <line x1="136.5" x2="136.5" y2="204" stroke="#FAEBD7"></line>
                                 <line y1="67.5" x2="204" y2="67.5" stroke="#FAEBD7"></line>
                                 <line y1="135.5" x2="204" y2="135.5" stroke="#FAEBD7"></line>
                             </svg>
-                            <h1 id="TryToWinFont" class="Font" style="font-size: 75px;">TRY TO WIN</h1>
+                            <h1 id="TryToWinFont" class="Font" style="font-size: 6vh; margin-top: 3vh;" >TRY TO WIN</h1>
+                            <div class="button-container" style="bottom: 0vh;width: 100%; height:10%;">
+                            <button class="btn" onclick="playerStart()" style=" font-size: 1.15vw;  display: none; width: 50%; height: 100% " id="Startgame"> Start The Game</button>
+                            <button class="btn"style="font-size: 1.15vw; width: 50%; display: none; height: 100%" id="LetComputerStart"> Let Computer Start</button>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -18,9 +18,9 @@ body {
     top: 5%;
     left: 50%;
     transform: translate(-40%, -40%);
-    letter-spacing: 10px;
+    letter-spacing: 0.65vw;
     text-align: center;
-    font-size: 75px;
+    font-size: 4.88vw;
     color: #faebd7;  
     font-family: dpcomic;  
 }
@@ -85,9 +85,9 @@ cursor {
     width: 100%;
     height: 100%;
     background-color: #191a1a;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 0.13vw, transparent 0);
+    background-size: 1.95vw 1.95vw;
+    background-position: -0.32vw -0.32vw
   }
 
 .card {
@@ -98,13 +98,13 @@ cursor {
 	transition:450ms ease-in-out;
   cursor:pointer;
   overflow: visible;
-  width: 290px;
-  height: 387.68px;
+  width: 18.88vw;
+  height: 44.35vh;
   }
 .card .Font{
   font-family: dpcomic;
   color: #faebd7;   
-  font-size: 45px;
+  font-size: 2.92vw;
   text-align: center;
   }
 .card .content {
@@ -112,8 +112,8 @@ cursor {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 5px;
+    box-shadow: 0px 0px 0.65vw 0.065vw #000000ee;
+    border-radius: 0.32vw;
   }
   
 .card .front,.card .back {
@@ -123,7 +123,7 @@ cursor {
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 0.32vw;
     overflow: hidden;
   }
   
@@ -140,7 +140,7 @@ cursor {
     position: absolute;
     content: ' ';
     display: block;
-    width: 160px;
+    width: 10.41vw;
     height: 160%;
     background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
     animation: rotation_481 5000ms infinite linear;
@@ -151,13 +151,13 @@ cursor {
     width: 99%;
     height: 99%;
     background-color: #151515;
-    border-radius: 5px;
+    border-radius: 0.32vw;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    gap: 30px;
+    /* gap: 1.95vw; */
   }
   
 .cardHover:hover .content {
@@ -189,7 +189,7 @@ cursor {
     width: 99%;
     height: 99%;
     background-color: #151515;
-    border-radius: 5px;
+    border-radius: 0.32vw;
     color: white;
     display: flex;
     flex-direction: column;

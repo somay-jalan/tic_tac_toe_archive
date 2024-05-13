@@ -15,12 +15,10 @@ body {
 .h1special {
     /* padding-top: 5em; */
     position: fixed; 
-    top: 5%;
-    left: 50%;
-    transform: translate(-40%, -40%);
-    letter-spacing: 10px;
+    /* transform: translate(-40%, -40%); */
+    letter-spacing: 0.65vw;
     text-align: center;
-    font-size: 75px;
+    font-size: 4.88vw;
     color: #faebd7;  
     font-family: dpcomic;  
 }
@@ -86,8 +84,8 @@ cursor {
     height: 100%;
     background-color: #191a1a;
     background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px
+    background-size: 1.95vw 1.95vw;
+    background-position: -0.32vw -0.32vw
   }
 
 .card {
@@ -96,15 +94,12 @@ cursor {
 	-o-transition:450ms ease-in-out;
 	-ms-transition:450ms ease-in-out;
 	transition:450ms ease-in-out;
-  cursor:pointer;
+  /* cursor:pointer; */
   overflow: visible;
-  width: 290px;
-  height: 387.68px;
   }
 .card .Font{
   font-family: dpcomic;
   color: #faebd7;   
-  font-size: 45px;
   text-align: center;
   }
 .card .content {
@@ -112,35 +107,31 @@ cursor {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 5px;
+    box-shadow: 0px 0px 0.65vw 0.65vw #000000ee;
+    border-radius: 0.35vw;
   }
   
-.card .front,.card .back {
+.card .back {
     background-color: #151515;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 0.32vw;
     overflow: hidden;
-  }
-  
-.card .back {
-    width: 100%;
-    height: 100%;
     justify-content: center;
     display: flex;
     align-items: center;
     overflow: hidden;
   }
   
+  
 .card .back::before {
     position: absolute;
     content: ' ';
     display: block;
-    width: 160px;
+    width: 10.41vw;
     height: 160%;
     background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
     animation: rotation_481 5000ms infinite linear;
@@ -151,23 +142,21 @@ cursor {
     width: 99%;
     height: 99%;
     background-color: #151515;
-    border-radius: 5px;
+    border-radius: 0.32vw;
     color: white;
-    display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    gap: 30px;
   }
   
-.cardHover:hover .content {
-    transform: rotateY(180deg);
-  }
+
   
 @keyframes fadeoutAniamtion{
     to {opacity: 0;}
   }
-
+  @keyframes fadeinAniamtion{
+    to {opacity: 1;}
+  }
   
 @keyframes rotation_481 {
     0% {
@@ -179,25 +168,7 @@ cursor {
     }
   }
   
-.card .front {
-    transform: rotateY(180deg);
-    color: white;
-  }
-  
-.card .front .front-content {
-  position: relative;
-    width: 99%;
-    height: 99%;
-    background-color: #151515;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
-    /* gap: 30px; */
 
-  }
   
 .card .title {
   color: #faebd7;
@@ -206,7 +177,37 @@ cursor {
   display: flex;
   }
   
+  .button-container {
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+  }
   
-  
-  
+  .btn {
+    background-color: #151515;
+    padding: 0.9vw 0.52vw;
+    color: #faebd7;
+    text-transform: uppercase;
+    letter-spacing: 0.13vw;
+    cursor: pointer;
+    /* border-radius: 0.65vw; */
+    border: 0.13vw dashed #ff9966;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 0.13vw 0.32vw -0.065vw, rgba(0, 0, 0, 0.3) 0px 0.065vw 0.19vw -0.065vw;
+    transition: 0.4s;
+   }
+   
+   .btn span:last-child {
+    display: none;
+   }
+   
+   .btn:hover {
+    transition: 0.4s;
+    border: 0.13vw dashed #ff9966;
+    background-color: #faebd7;
+    color: #ff9966;
+   }
+   
+   .btn:active {
+    background-color: #d7835a;
+   } 
   
