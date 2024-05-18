@@ -182,6 +182,10 @@ cursor {
     bottom: 0px;
     display: flex;
   }
+  .SvgContainer {
+    position: relative;
+    display: flex;
+  }
   
   .btn {
     background-color: #151515;
