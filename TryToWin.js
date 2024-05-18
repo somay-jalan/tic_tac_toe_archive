@@ -52,15 +52,15 @@ function playerStart(){
         document.getElementById("TryToWinFont").style.animation="fadeinAniamtion 1s forwards";
         document.getElementById("Try to win").style.cursor="pointer";
     },1000)
-    gameMechanics(0)
+    gameMechanics(1)
 
 }
 
 function gameMechanics(turn){
-    document.addEventListener("click",tictactoeclicked,true)
+    document.addEventListener("click",(event)=>tictactoeclicked(turn,event),true)
 }
 
-function tictactoeclicked(event){
+function tictactoeclicked(turn,event){
     var xOffset=0
     var yOffset=0
     // console.log(event.x)
@@ -104,32 +104,56 @@ function tictactoeclicked(event){
             yOffset=83.33
             console.log("9")
     }
-    var svgCross = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    var line1Cross = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-    var line2Cross = document.createElementNS("http://www.w3.org/2000/svg", 'line');
-    svgCross.setAttribute("aria-hidden","true");
-    svgCross.setAttribute('viewbox', '0 0 20% 20%');
-    svgCross.setAttribute('width', '20%');
-    svgCross.setAttribute('height', '20%');
-    line1Cross.setAttribute("x1","0")
-    line1Cross.setAttribute("y1","0")
-    line1Cross.setAttribute("x2","100%")
-    line1Cross.setAttribute("y2","100%")
-    line1Cross.setAttribute('stroke', '#FAEBD7');
-    line2Cross.setAttribute("x1","0")
-    line2Cross.setAttribute("y1","100%")
-    line2Cross.setAttribute("x2","100%")
-    line2Cross.setAttribute("y2","0")
-    line2Cross.setAttribute('stroke', '#FAEBD7');
-    svgCross.appendChild(line1Cross)
-    svgCross.appendChild(line2Cross)
-    console.log(xOffset,yOffset)
-    var svg = document.getElementById('SvgContainer'); 
-    var NewCross = svgCross;
-    NewCross.style.marginTop=String(yOffset-10)+"%"
-    NewCross.style.marginLeft=String(xOffset-10)+"%"
-    NewCross.style.position="absolute"
-    svg.appendChild(NewCross)
-    console.log(svg)
+    if(turn == 0 && xOffset!=0 && yOffset!=0){
+        var svgCross = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        var line1Cross = document.createElementNS("http://www.w3.org/2000/svg", 'line');
+        var line2Cross = document.createElementNS("http://www.w3.org/2000/svg", 'line');
+        svgCross.setAttribute("aria-hidden","true");
+        svgCross.setAttribute('viewbox', '0 0 20% 20%');
+        svgCross.setAttribute('width', '20%');
+        svgCross.setAttribute('height', '20%');
+        line1Cross.setAttribute("x1","0")
+        line1Cross.setAttribute("y1","0")
+        line1Cross.setAttribute("x2","100%")
+        line1Cross.setAttribute("y2","100%")
+        line1Cross.setAttribute('stroke', '#FAEBD7');
+        line2Cross.setAttribute("x1","0")
+        line2Cross.setAttribute("y1","100%")
+        line2Cross.setAttribute("x2","100%")
+        line2Cross.setAttribute("y2","0")
+        line2Cross.setAttribute('stroke', '#FAEBD7');
+        svgCross.appendChild(line1Cross)
+        svgCross.appendChild(line2Cross)
+        console.log(xOffset,yOffset)
+        var svg = document.getElementById('SvgContainer'); 
+        var NewCross = svgCross;
+        NewCross.style.marginTop=String(yOffset-10)+"%"
+        NewCross.style.marginLeft=String(xOffset-10)+"%"
+        NewCross.style.position="absolute"
+        svg.appendChild(NewCross)
+        console.log(svg)
+    }
+    if(turn == 1 && xOffset!=0 && yOffset!=0){
+        var svgCircle = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        var circle = document.createElementNS("http://www.w3.org/2000/svg", 'circle');
+        svgCircle.setAttribute("aria-hidden","true");
+        svgCircle.setAttribute('viewbox', '0 0 % 20%');
+        svgCircle.setAttribute('width', '20%');
+        svgCircle.setAttribute('height', '20%');
+        svgCircle.setAttribute('fill', 'none');
+        circle.setAttribute("r","49%")
+        circle.setAttribute("cx","50%")
+        circle.setAttribute("cy","50%")
+        circle.setAttribute('stroke', '#FAEBD7');
+        svgCircle.appendChild(circle)
+        console.log(xOffset,yOffset)
+        var svg = document.getElementById('SvgContainer'); 
+        var NewCircle = svgCircle;
+        NewCircle.style.marginTop=String(yOffset-10)+"%"
+        NewCircle.style.marginLeft=String(xOffset-10)+"%"
+        NewCircle.style.position="absolute"
+        svg.appendChild(NewCircle)
+        console.log(svg)
+    }
     // console.log(event)
 }
