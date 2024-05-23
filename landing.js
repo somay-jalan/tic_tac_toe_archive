@@ -40,3 +40,4 @@ function transitionToTryToWinPage(){
         window.location.href="/TryToWin.html"
     },500)
 }
+
