@@ -83,7 +83,7 @@ cursor {
     width: 100%;
     height: 100%;
     background-color: #191a1a;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 0.13vw, transparent 0);
     background-size: 1.95vw 1.95vw;
     background-position: -0.32vw -0.32vw
   }

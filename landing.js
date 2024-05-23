@@ -1,3 +1,4 @@
+
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 async function typerwriter(speed){
     document.getElementById("typewriter").style.opacity=1;
@@ -13,7 +14,13 @@ async function typerwriter(speed){
 
 }
 
-function transitionToWinPage(){
+function mainPageLoad(){
+    typerwriter(90)
+}
+
+function transitionToTryToWinPage(){
+    document.getElementById("3d").style.animation="fadeoutAniamtion 0.1s forwards";
+    document.getElementById("weird").style.animation="fadeoutAniamtion 0.1s forwards";
     document.getElementById("typewriter").style.animation="fadeoutAniamtion 0.3s forwards";
     document.getElementById("Try to win").classList.remove("cardHover");
     document.getElementById("Try to win").style.width="45.57vw";
@@ -27,9 +34,8 @@ function transitionToWinPage(){
     document.getElementById("crossSecond").style.animation="fadeoutAniamtion 0.25s forwards";
     document.getElementById("TryToWinFont").style.fontSize="6vh";
     document.getElementById("TryToWinFont").style.marginTop="3vh";
-
-    document.getElementById("TicTacToe").style.width="39.06vw";
-    document.getElementById("TicTacToe").style.height="39.06vw";
+    // document.getElementById("TicTacToe").style.width="80%";
+    // document.getElementById("TicTacToe").style.aspectRatio="1/1";
     setTimeout(function(){
         window.location.href="/TryToWin.html"
     },500)

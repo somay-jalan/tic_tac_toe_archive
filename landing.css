@@ -90,6 +90,15 @@ cursor {
     background-position: -0.32vw -0.32vw
   }
 
+  .SvgContainer  {
+    position: relative;
+    display: flex;
+  }
+  .threeDTicTacToeConatiner  {
+    position: relative;
+    display: flex;
+  }
+
 .card {
   -webkit-transition:450ms ease-in-out;
 	-moz-transition:450ms ease-in-out;
