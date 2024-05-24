@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link rel="stylesheet" href="3DTicTacToe.css">
+		<meta charset="utf-8">
+		<title>Tic Tac Toe archive</title>
+		<style>
+			body { margin: 0; }
+		</style>
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"
+              }
+            }
+        </script>
+	</head>
+	<body onload="" onunload="" >
+        <div class='pattern' >
+            <script src="/3DTicTacToe.js" type="module" ></script>
+            <h1 class="h1special" id="rules" style="top: 5%; left: 8%; font-size: 3.9vw; opacity: 0;">Rules</h1>
+            <h1 class="h1special" id="rulesText" style="top: 20%; left: 4%; font-size: 1.95vw; opacity: 0;text-align: left;">
+            This is a<br> 3d Tic Tac Toe.<br> You have to <br> Drag and Scroll,<br> for the cube to <br> rotate. Click at<br> the dots to play<br> your move. </h1>
+            <div class="card" style="position:fixed;top: 2%; left: 27.5% ; width: 45.57vw; height: 94.2vh;" id="Try to win" >
+                <div class="content">
+                    <div class="back">
+                        <div class="back-content" id="backContent">
+                            <div class="threeDTicTacToeConatiner grabbable" id="3dTicTacToeConatiner" style="margin-top:5%;margin-left: 10%; aspect-ratio:1/1;width:80%; ">
+                                
+                            </div>
+                            <h1 id="3dTicTacToeFont" class="Font" style="font-size: 6vh; margin-top: 3vh;" >3d Tic Tac Toe.</h1>
+                            <div class="button-container" style="bottom: 0vh;width: 100%; height:10%;">
+                            <button class="btn" style=" font-size: 1.15vw;  display: none; width: 33.33%; height: 100% " id="Single Player"> Single Player</button>
+                            <button class="btn" style="font-size: 1.15vw; width: 33.33%; display: none; height: 100%" id="Double Player"> Double Player</button>
+                            <button class="btn" style="font-size: 1.15vw; width: 33.34%; display: none; height: 100%" id="Play Online"> Play Online</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

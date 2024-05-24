@@ -5,7 +5,7 @@ import { RoundedBoxGeometry } from './RoundedBoxGeometry.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-scene.fog = new THREE.Fog( 0x000000, 0.1, 4 );
+scene.fog = new THREE.Fog( 0x000000, 0.1, 4.5 );
 
 const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setClearColor( 0x000000, 0 );
@@ -28,59 +28,42 @@ for(let i=-1;i<2;i++){
             var random=Math.random()
             if(random<0.33){
                 const geometry = new RoundedBoxGeometry( 0.5, 0.5, 0.5,1,50 );
-                const material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75} );
+                const material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75 ,wireframe:true} );
                 const sphere = new THREE.Mesh( geometry, material );
-                const edges = new THREE.EdgesGeometry( geometry ); 
-                const line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xFAEBD7 } ) ); 
-                line.position.set(i,j,k)
                 sphere.position.x=i
                 sphere.position.y=j
                 sphere.position.z=k
                 scene.add( sphere );
-                scene.add( line );
-                sphereCross.push(sphere,line)
+                sphereCross.push(sphere)
             }else if(random<0.66){
                 var geometry = new RoundedBoxGeometry( 0.5, 0.15, 0.15,0.5,50 );
-                var material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75} );
+                var material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75 ,wireframe:true} );
                 var cube = new THREE.Mesh( geometry, material );
-                var edges = new THREE.EdgesGeometry( geometry ); 
-                var line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xFAEBD7 } ) ); 
-                line.position.set(i,j,k)
-                line.rotation.z=Math.PI/4
                 cube.rotation.z=Math.PI/4
                 cube.position.x=i
                 cube.position.y=j
                 cube.position.z=k
                 scene.add( cube );
-                scene.add( line );
-                sphereCross.push(cube,line)
+                sphereCross.push(cube)
                 geometry = new RoundedBoxGeometry( 0.5, 0.15, 0.15,0.5,50 );
-                material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75} );
+                material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75 ,wireframe:true} );
                 cube = new THREE.Mesh( geometry, material );
-                edges = new THREE.EdgesGeometry( geometry ); 
-                line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xFAEBD7 } ) ); 
-                line.position.set(i,j,k)
-                line.rotation.z=Math.PI/2+Math.PI/4
                 cube.rotation.z=Math.PI/2+Math.PI/4
                 cube.position.x=i
                 cube.position.y=j
                 cube.position.z=k
                 scene.add( cube );
-                scene.add( line );
-                sphereCross.push(cube,line)
+                sphereCross.push(cube)
             }
 
             geometry = new THREE.SphereGeometry( 0.05 );
             material = new THREE.MeshBasicMaterial( { color: 0xFAEBD7,transparent:true,opacity:0.75} );
             const sphere = new THREE.Mesh( geometry, material );
-            edges = new THREE.EdgesGeometry( geometry ); 
-            line = new THREE.LineSegments(edges, new THREE.LineBasicMaterial( { color: 0xFAEBD7 } ) ); 
-            line.position.set(i,j,k)
             sphere.position.x=i
             sphere.position.y=j
             sphere.position.z=k
             scene.add( sphere );
-            scene.add( line );
+            // scene.add( line );
 
         }
     }
@@ -125,6 +108,9 @@ function angleCheck(){
     // camera.position.x=xRotationOld/document.body.clientWidth-0.5;
     boom.rotation.y=(yRotationOld/document.body.clientHeight-0.5)*2*Math.PI;
     boom.rotation.z=((yRotationOld+xRotationOld)/(document.body.clientHeight+document.body.clientWidth)-0.5)*2*Math.PI;
+    // boom.rotation.x+=(0.01)
+    // boom.rotation.y+=(0.01)
+    // boom.rotation.z+=(0.01)
 
 }
 
@@ -199,4 +185,7 @@ function TransitionTo3dTicTacToePage(Event){
     document.getElementById("3d").style.position="fixed";
     document.getElementById("3dTicTacToeFont").style.fontSize="6vh";
     document.getElementById("3dTicTacToeFont").style.marginTop="3vh";
+    setTimeout(function(){
+        window.location.href="/3DTicTacToe.html"
+    },500)
 }
