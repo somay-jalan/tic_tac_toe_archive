@@ -20,7 +20,6 @@ function mainPageLoad(){
 
 function transitionToTryToWinPage(){
     document.getElementById("3d").style.animation="fadeoutAniamtion 0.1s forwards";
-    document.getElementById("weird").style.animation="fadeoutAniamtion 0.1s forwards";
     document.getElementById("typewriter").style.animation="fadeoutAniamtion 0.3s forwards";
     document.getElementById("Try to win").classList.remove("cardHover");
     document.getElementById("Try to win").style.width="45.57vw";

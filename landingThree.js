@@ -175,7 +175,6 @@ function TransitionTo3dTicTacToePage(Event){
     xRotationNew=document.body.clientWidth/2
     yRotationNew=document.body.clientHeight/2
     document.getElementById("Try to win").style.animation="fadeoutAniamtion 0.1s forwards";
-    document.getElementById("weird").style.animation="fadeoutAniamtion 0.1s forwards";
     document.getElementById("typewriter").style.animation="fadeoutAniamtion 0.3s forwards";
     document.getElementById("3d").classList.remove("cardHover");
     document.getElementById("3d").style.width="45.57vw";

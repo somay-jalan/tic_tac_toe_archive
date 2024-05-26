@@ -1,6 +1,5 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-
 import { RoundedBoxGeometry } from './RoundedBoxGeometry.js';
 
 const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
@@ -235,6 +234,10 @@ function startAnimation(){
         // document.getElementById("TryToWinFont").remove()
         document.getElementById("Single Player").style.display="block";
         document.getElementById("Double Player").style.display="block";
+        document.getElementById("Play Online").style.width="0%";
+        document.getElementById("Play Online").style.padding="0%";
+        document.getElementById("Play Online").style.border="0";
+        document.getElementById("Play Online").innerHTML="";
         document.getElementById("Play Online").style.display="block";
     },1000)
     // document.getElementById("LetComputerStart").style.transition="0.4s";
@@ -306,7 +309,6 @@ function singlePlayerClick(){
     document.getElementById("Double Player").innerHTML="Let Computer Start";
     document.getElementById("Single Player").removeEventListener('click',singlePlayerClick)
     document.getElementById("Double Player").removeEventListener('click',DoublePlayerClick)
-    document.getElementById("Play Online").removeEventListener('click',OnlinePlayClick)
     document.getElementById("Single Player").addEventListener('click',PlayerTurn)
     document.getElementById("Double Player").addEventListener('click',computerTurn)
     turn=0
@@ -315,9 +317,13 @@ function singlePlayerClick(){
 }
 
 function DoublePlayerClick(){
+    document.getElementById("Single Player").style.width='33.33%'
+    document.getElementById("Double Player").style.width="33.33%";
+    document.getElementById("Play Online").style.width="33.34%";
+    document.getElementById("Play Online").style.padding="0.9vw 0.52vw";
+    document.getElementById("Play Online").style.border="0.13vw dashed #ff9966";
     document.getElementById("Single Player").removeEventListener('click',singlePlayerClick)
     document.getElementById("Double Player").removeEventListener('click',DoublePlayerClick)
-    document.getElementById("Play Online").removeEventListener('click',OnlinePlayClick)
     document.getElementById("Single Player").innerHTML='Restart';
     document.getElementById("Double Player").innerHTML='Main Menu';
     document.getElementById("Play Online").innerHTML="Home Page";
@@ -341,15 +347,14 @@ function DoublePlayerPlay(){
     }
 }
 
-function OnlinePlayClick(){
-}
+
 
 function PlayerTurn(){
     document.getElementById("3dTicTacToeFont").innerHTML="Your Turn";
     document.getElementById("3dTicTacToeFont").style.animation="fadeinAniamtion 1s forwards";
-    document.getElementById("Single Player").style.width='33%'
-    document.getElementById("Double Player").style.width="33%";
-    document.getElementById("Play Online").style.width="33%";
+    document.getElementById("Single Player").style.width='33.33%'
+    document.getElementById("Double Player").style.width="33.33%";
+    document.getElementById("Play Online").style.width="33.34%";
     document.getElementById("Play Online").innerHTML="Home Page";
     document.getElementById("Single Player").innerHTML='Restart';
     document.getElementById("Double Player").innerHTML='Main Menu';
@@ -372,7 +377,6 @@ animate();
 startAnimation()
 document.getElementById("Single Player").addEventListener('click',singlePlayerClick)
 document.getElementById("Double Player").addEventListener('click',DoublePlayerClick)
-document.getElementById("Play Online").addEventListener('click',OnlinePlayClick)
 
 function onPointerMove( event ) {
     pointerMove.x = ( (event.clientX-document.getElementById("3dGame").getBoundingClientRect().left) / document.getElementById("3dGame").offsetWidth) * 2 - 1;
@@ -814,13 +818,17 @@ function MainMenu(){
             }
         }
     }
+    document.getElementById("Single Player").style.width='50%'
+    document.getElementById("Double Player").style.width="50%";
+    document.getElementById("Play Online").style.width="0%";
+    document.getElementById("Play Online").style.padding="0%";
+    document.getElementById("Play Online").style.border="0";
+    document.getElementById("Play Online").innerHTML="";
     document.getElementById("Single Player").innerHTML='Single Player';
     document.getElementById("Double Player").innerHTML='Double Player';
-    document.getElementById("Play Online").innerHTML="Play Online";
 
     document.getElementById("Single Player").addEventListener('click',singlePlayerClick)
     document.getElementById("Double Player").addEventListener('click',DoublePlayerClick)
-    document.getElementById("Play Online").addEventListener('click',OnlinePlayClick)
 
 
 
